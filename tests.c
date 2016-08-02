@@ -5,10 +5,8 @@
 #include "tests.h"
 #include "mytimer.h"
 
-#define COUNT (int) 1e7
+#define COUNT (int) 1e6
 #define BRUTE_THR (int) 1e5
-#define VERBOSE
-
 
 void time_stamp() {
 	printf(" IN %d ms", timer_clock());
@@ -32,8 +30,10 @@ void test_the_same() {
 		arr[i] = 2;
 	}
 	timer_start();
-    if (COUNT <= BRUTE_THR) print_pairs_brute(arr, COUNT, 4);
-	time_stamp();
+    if (COUNT <= BRUTE_THR) {
+		print_pairs_brute(arr, COUNT, 4);
+		time_stamp();
+	}
 	print_pairs_hash(arr, COUNT, 4);
 	time_stamp();
 	print_pairs_2pointers(arr, COUNT, 4);
@@ -51,8 +51,10 @@ void test_one_pair() {
 		arr[i] = 3;
 	}
 	timer_start();
-    if (COUNT <= BRUTE_THR) print_pairs_brute(arr, COUNT, 5);
-	time_stamp();
+    if (COUNT <= BRUTE_THR) {
+		print_pairs_brute(arr, COUNT, 5);
+		time_stamp();
+	}
 	print_pairs_hash(arr, COUNT, 5);
 	time_stamp();
 	print_pairs_2pointers(arr, COUNT, 5);
@@ -68,10 +70,12 @@ void test_random() {
 	for (int i = 0; i < COUNT; ++i) {
 		arr[i] = rand();
 	}
-	int N = rand();
+	const int N = rand();
 	timer_start();
-    if (COUNT <= BRUTE_THR) print_pairs_brute(arr, COUNT, N);
-	time_stamp();
+    if (COUNT <= BRUTE_THR) {
+		print_pairs_brute(arr, COUNT, N);
+		time_stamp();
+	}
 	print_pairs_hash(arr, COUNT, N);
 	time_stamp();
 	print_pairs_2pointers(arr, COUNT, N);
@@ -86,8 +90,10 @@ void test_descending() {
 		arr[i] = COUNT - i - 1;
 	}
 	timer_start();
-    if (COUNT <= BRUTE_THR) print_pairs_brute(arr, COUNT, COUNT-1);
-	time_stamp();
+    if (COUNT <= BRUTE_THR) {
+		print_pairs_brute(arr, COUNT, COUNT-1);
+		time_stamp();
+	}
 	print_pairs_hash(arr, COUNT, COUNT-1);
 	time_stamp();
 	print_pairs_2pointers(arr, COUNT, COUNT-1);

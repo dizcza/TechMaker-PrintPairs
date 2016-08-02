@@ -8,7 +8,6 @@
 int added_ok(const HashTable * table, const char * key, const int val_correct) {
 	char * test_val_str;
 	assert(hashtable_get(table, key, (void*) &test_val_str) == CC_OK);
-	//printf("should be %d (or %s), get %d (or %s)\n", count, val_str, atoi(test_val_str), test_val_str);
 	return atoi(test_val_str) == val_correct;
 }
 
