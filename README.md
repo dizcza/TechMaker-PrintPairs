@@ -1,3 +1,9 @@
+## Algorithmic complexity
+
+ - brute: _O(N^2)_
+ - hash: _O(N)_
+ - 2 pointers: _O(NlogN)_
+
 ## Benchmarks (ms):
 
 | N          | brute  | hash   | 2 pointers |   flag      |
