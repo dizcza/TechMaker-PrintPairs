@@ -1,1 +1,0 @@
-./Debug/mytimer.c.o ./Debug/print_pairs_2pointers.c.o ./Debug/print_pairs_brute.c.o ./Debug/print_pairs_hash.c.o ./Debug/tests.c.o
